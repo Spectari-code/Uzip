@@ -8,6 +8,20 @@ import os
 import zipfile
 import shutil
 from datetime import datetime
+import tkinter
+import customtkinter
+
+# System Settings
+customtkinter.set_appearance_mode("sumary_line")
+customtkinter.set_default_color_theme("blue")
+
+# Create the main window/app frame
+app = customtkinter.CTk()
+app.geometry('720x480')
+app.title('Uzip')
+
+# App main loop
+app.mainloop()
 
 # TODO: Remove hard coded path
 # navigate to the download folder
@@ -46,3 +60,6 @@ for file in os.listdir():
     if os.path.isfile(file) and file.endswith('.zip'):
         os.remove(file)
         print(f'Deleted {file}')
+
+print('Moved all files to a new folder and deleted the original zip files')
+print('Done')
